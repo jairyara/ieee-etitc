@@ -1,0 +1,29 @@
+---
+import LogoIEEE from '@assets/branding/ieee mb blue.png';
+import {menu} from "@utils/menu";
+import {loadId} from "astro/dist/vite-plugin-astro/utils";
+
+---
+
+<header class="bg-white h-24 flex items-center justify-around">
+    <figure class="h-16">
+        <a href="/" rel="noreferrer">
+            <img class="h-full" src={LogoIEEE.src} alt="IEEE Logo " title="IEEE Logo">
+        </a>
+    </figure>
+    <nav>
+        <ul class="flex items-center gap-4">
+            <li>
+                <a href="/">Inicio</a>
+            </li>
+            <li>
+                <a href="/proyectos">Proyectos</a>
+            </li>
+            <li>
+                <a href="/cursos">Cursos</a>
+            </li>
+            <li><a href="/noticias">Noticias</a></li>
+            <li><a href="/precios">Precios</a></li>
+        </ul>
+    </nav>
+</header>
