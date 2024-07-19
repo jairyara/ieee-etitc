@@ -2,6 +2,8 @@
 import LogoIEEE from '@assets/branding/ieee mb blue.png';
 import {menuItem} from "@utils/menu";
 
+
+
 ---
 
 <header class="bg-white h-24 flex items-center justify-around shadow">
@@ -15,7 +17,7 @@ import {menuItem} from "@utils/menu";
             {
                 menuItem.map(item =>
                         <li>
-                            <a class=`text-blueProject font-bold text-lg ${item.url === '/' && 'text-greenProject'}` href={item.url}>
+                            <a class=`text-blueProject font-bold text-lg ${item.url === Astro.url.pathname && 'text-greenProject'}` href={item.url}>
                                 {item.name}
                             </a>
                         </li>
