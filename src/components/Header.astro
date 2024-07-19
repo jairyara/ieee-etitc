@@ -1,11 +1,10 @@
 ---
 import LogoIEEE from '@assets/branding/ieee mb blue.png';
-import {menu} from "@utils/menu";
-import {loadId} from "astro/dist/vite-plugin-astro/utils";
+import {menuItem} from "@utils/menu";
 
 ---
 
-<header class="bg-white h-24 flex items-center justify-around">
+<header class="bg-white h-24 flex items-center justify-around shadow">
     <figure class="h-16">
         <a href="/" rel="noreferrer">
             <img class="h-full" src={LogoIEEE.src} alt="IEEE Logo " title="IEEE Logo">
@@ -13,17 +12,15 @@ import {loadId} from "astro/dist/vite-plugin-astro/utils";
     </figure>
     <nav>
         <ul class="flex items-center gap-4">
-            <li>
-                <a href="/">Inicio</a>
-            </li>
-            <li>
-                <a href="/proyectos">Proyectos</a>
-            </li>
-            <li>
-                <a href="/cursos">Cursos</a>
-            </li>
-            <li><a href="/noticias">Noticias</a></li>
-            <li><a href="/precios">Precios</a></li>
+            {
+                menuItem.map(item =>
+                        <li>
+                            <a class=`text-blueProject font-bold text-lg ${item.url === '/' && 'text-greenProject'}` href={item.url}>
+                                {item.name}
+                            </a>
+                        </li>
+                )
+            }
         </ul>
     </nav>
 </header>
