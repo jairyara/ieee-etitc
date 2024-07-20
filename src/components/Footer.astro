@@ -1,13 +1,17 @@
 ---
-import { icon } from 'astro-icon/components'
+import { Icon } from 'astro-icon/components'
 
 
 ---
 
-<footer class="flex items-center bg-[url('./public/assets/img/bgFooter.webp')] bg-right-bottom bg-cover bg-no-repeat">
+<footer class="flex items-center bg-[url('/assets/img/bgFooter.webp')] bg-right-bottom bg-cover bg-no-repeat">
     <section class="w-8/12 mx-auto py-32">
         <h4 class="text-lg p-4 text-white bg-black w-fit font-bold">¿Quieres ser parte ?</h4>
         <h2 class="text-7xl py-8 font-bold">Contáctanos </h2>
         <h3 class="text-3xl  text-white">contactoIEEE@itc.edu.co</h3>
+        <Icon title="X" name="social/x" />
+        <Icon title="Facebook" name="social/facebook" />
+        <Icon title="Instagram" name="social/instagram" />
+        <Icon name="ui/plus" class="text-white text-7xl" />
     </section>
 </footer>
