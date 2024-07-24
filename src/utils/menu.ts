@@ -15,12 +15,12 @@ export let menuItem: menu[] = [
     {
         name: 'Cursos',
         url: '/cursos'
-    },
+},
     {
         name: 'Noticias',
         url: '/noticias'
     },
     {
-        name: 'Precios',
-        url: '/precios'
+        name: 'Inscripciones',
+        url: '/inscripciones'
     }];

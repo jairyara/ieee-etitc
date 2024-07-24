@@ -1,11 +1,41 @@
 ---
-
+import { Icon } from 'astro-icon/components';
+import { socialMedia } from "@data/social-media";
 ---
 
-<footer class="flex items-center bg-[url('./public/assets/img/bgFooter.webp')] bg-right-bottom bg-cover bg-no-repeat">
-    <section class="w-8/12 mx-auto py-32">
-        <h4 class="text-lg p-4 text-white bg-black w-fit font-bold">¿Quieres ser parte ?</h4>
-        <h2 class="text-7xl py-8 font-bold">Contáctanos </h2>
-        <h3 class="text-3xl  text-white">contactoIEEE@itc.edu.co</h3>
+<footer class="flex items-end bg-[url('/assets/img/footerBg.webp')] aspect-video bg-right-bottom bg-contain bg-no-repeat">
+    <section class="w-8/12 mx-auto py-32 flex items-center gap-8 2xl:gap-20">
+        <article class="flex flex-col justify-center gap-4">
+            {socialMedia.map(({title, url, icon}) => (
+                <a href={url} rel="noreferrer" target="_blank"
+                   class=`flex ${icon !== 'instagram' ? 'gap-2' : 'gap-1'} items-center`>
+                    <Icon title={title}
+                          name=`social/${icon}`
+                          size={icon === 'instagram' ? '36' : '28'}
+                          class=`${icon !== 'instagram' && 'ml-1'} text-greenProjectAccent` />
+                    <span>
+                        {`@${title}`}
+                    </span>
+                </a>))
+            }
+        </article>
+        <form>
+            <h2 class="text-6xl 2xl:text-7xl font-bold">Contáctanos </h2>
+            <section class="mt-12 flex flex-col gap-8 justify-end">
+                <label class="flex flex-col gap-4" for="name">
+                    <span class="text-xl pl-3">Nombre</span>
+                    <input id="name" name="name" class="px-4 h-11 bg-transparent border-2 border-greenProjectAccent rounded-full" type="text" required>
+                </label>
+                <label class="flex flex-col gap-4" for="mail">
+                    <span class="text-xl pl-3">Email</span>
+                    <input id="mail" name="mail" class="px-4 h-11 bg-transparent border-2 border-greenProjectAccent rounded-full" type="text" required>
+                </label>
+                <div class="flex justify-end">
+                    <button type="submit" class=" mr-4 h-10 border-2 transition ease-linear duration-800 border-b-0 hover:border-b-2  hover:border-b-greenProjectAccent  border-t-0 border-x-0 w-fit px-4">
+                        <span class="text-xl">Enviar</span>
+                    </button>
+                </div>
+            </section>
+        </form>
     </section>
 </footer>
