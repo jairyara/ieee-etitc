@@ -1,53 +1,53 @@
 ---
-const backgroundColor = "rgb(24 121 78)";
-
+import {Icon} from 'astro-icon/components'
 ---
 
-<article class="my-20 ">
-    <section class="bg-bluecard p-8 rounded-xl shadow-lg shadow-sky-300/90" >
-        <div class="flex gap-4">
-            <section class = "text-white w-1/5">
-                <h5 class="text-5xl font-semibold">05</h5>   
-            </section>
-            <section class="w-3/5">
-                <h3 class= "text-white uppercase text-base">CAPITULO OES</h3>
-                <h2 class= "text-white capitalize font-bold text-xl ">oceanic Engineering Society</h2>
-                <p class= "text-white mt-4 text-lg ">
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. 
-                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, 
-                    cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una 
-                    galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. 
-                    No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos 
-                    electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la 
-                    creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más 
-                    recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye 
-                    versiones de Lorem Ipsum.
-                </p>
-            </section>
-            <section class="w-1/5">
-                <icon class="">
-                    ____
-                </icon>
-            </section>
+<article class="my-20 bg-blueCard p-8 rounded-xl shadow-lg shadow-sky-300/90">
+    <section class="flex gap-4">
+        <section class="text-white w-1/5">
+            <h5 class="text-5xl font-semibold">05</h5>
+        </section>
+        <section class="w-3/5">
+            <h3 class="text-white uppercase text-base">CAPITULO OES</h3>
+            <h2 class="text-white capitalize font-bold text-xl ">oceanic Engineering Society</h2>
+            <p class="text-white mt-4 text-lg ">
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
+                cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una
+                galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
+                No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos
+                electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la
+                creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más
+                recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye
+                versiones de Lorem Ipsum.
+            </p>
+        </section>
+        <section class="w-1/5 flex justify-end items-end">
+            <button class="flex items-center gap-2 text-white">
+                <span>Detalles</span>
+                <div class="bg-white p-2 rounded-full">
+                    <Icon name="ui/close" class="text-black" size="16"/>
+                </div>
+            </button>
+        </section>
+    </section>
+    <section class="flex gap-4 w-3/5 mx-auto mt-8">
+        <div class="text-white">
+            _____
         </div>
-        <div class="flex gap-4">
-            <icon>
-                _____
-            </icon>
-            <section>
-                <h2 class= "text-white capitalize text-2xl">oceanic Engineering Society</h2>
-                <p class= "text-white">
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. 
-                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, 
-                    cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una 
-                    galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. 
-                    No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos 
-                    electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la 
-                    creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más 
-                    recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye 
-                    versiones de Lorem Ipsum.
-                </p>
-            </section>
-        </div>
+        <section>
+            <h2 class="text-white capitalize text-2xl mb-4">oceanic Engineering Society</h2>
+            <p class="text-white">
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
+                cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una
+                galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
+                No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos
+                electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la
+                creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más
+                recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye
+                versiones de Lorem Ipsum.
+            </p>
+        </section>
     </section>
 </article>
