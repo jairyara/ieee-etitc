@@ -6,7 +6,8 @@ export default {
 			colors: {
 				'blueProject': '#00629B',
 				'greenProject': '#AFE767',
-				'greenProjectAccent': '#88C64B'
+				'greenProjectAccent': '#88C64B',
+				'bluecard' : '#65b0c1'
 			},
 		},
 
