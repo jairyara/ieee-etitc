@@ -15,6 +15,12 @@ export default {
 				'shark': '#1D1D1F',
 				'greenShow': '#ECFFD4'
 			},
+			height: {
+				'hero': 'calc(100vh - 96px)'
+			},
+			backgroundImage: {
+				'radial-center': 'radial-gradient(circle, rgba(48,79,51,0.5) 31%, rgba(22,37,10,0.76) 100%)',
+			}
 		},
 	},
 	plugins: [],
