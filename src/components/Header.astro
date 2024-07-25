@@ -1,28 +1,43 @@
 ---
-import LogoIEEE from '@assets/branding/ieee mb blue.png';
+import LogoIEEEETITC from '@assets/branding/ieee-etitc.webp';
 import {menuItem} from "@utils/menu";
-
-
-
+import {Icon} from "astro-icon/components";
 ---
 
-<header class="bg-white h-24 flex items-center justify-around shadow">
-    <figure class="h-16">
-        <a href="/" rel="noreferrer">
-            <img class="h-full" src={LogoIEEE.src} alt="IEEE Logo " title="IEEE Logo">
-        </a>
-    </figure>
-    <nav>
-        <ul class="flex items-center gap-4">
-            {
-                menuItem.map(item =>
-                        <li>
-                            <a class=`text-blueProject font-bold text-lg ${item.url === Astro.url.pathname && 'text-greenProject'}` href={item.url}>
-                                {item.name}
-                            </a>
-                        </li>
-                )
-            }
-        </ul>
-    </nav>
+<header class="bg-white h-24 shadow sticky top-0 left-0">
+    <div class="relative lg:container mx-auto flex items-center justify-between h-full">
+        <figure class="h-12 pl-4 lg:p-0">
+            <a href="/" rel="noreferrer" class="flex w-full h-full items-center gap-3">
+                <img class="h-full" src={LogoIEEEETITC.src} alt="IEEE Logo " title="IEEE Logo">
+                <span class="text-blueProject font-title text-lg lg:text-2xl font-bold uppercase">ieee etitc</span>
+            </a>
+        </figure>
+        <nav id="menu-list" class=" absolute lg:static top-24 bg-white
+        lg:bg-transparent w-full lg:w-1/2 p-5 shadow lg:shadow-none hidden lg:block">
+            <ul class="flex lg:items-center flex-col lg:flex-row lg:justify-around gap-4">
+                {
+                    menuItem.map(item =>
+                            <li>
+                                <a class=`text-blueProject font-bold lg:text-lg font-title
+                                ${item.url === Astro.url.pathname && 'text-greenProjectAccent'}` href={item.url}>
+                                    {item.name}
+                                </a>
+                            </li>
+                    )
+                }
+            </ul>
+        </nav>
+        <button id="btn-header" class="pr-4 lg:p-0 lg:hidden">
+            <Icon name="ui/burger-menu" size={32} class="text-blueProject" />
+        </button>
+    </div>
 </header>
+
+<script>
+    const menuList = document.getElementById('menu-list') as Element;
+    const btnHeader = document.getElementById('btn-header') as Element;
+
+    btnHeader.addEventListener('click', () => {
+        menuList.classList.toggle('hidden');
+    });
+</script>

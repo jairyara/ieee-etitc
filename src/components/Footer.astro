@@ -1,22 +1,23 @@
 ---
-import { Icon } from 'astro-icon/components';
-import { socialMedia } from "@data/social-media";
+import {Icon} from 'astro-icon/components';
+import {socialMedia} from "@data/social-media";
+import imgFooter from '@assets/img/robot-footer.webp';
 ---
 
-<footer class="flex items-end bg-[url('/assets/img/footerBg.webp')] aspect-video bg-right-bottom bg-contain bg-no-repeat">
-    <section class="w-8/12 mx-auto py-32 flex items-center gap-8 2xl:gap-20">
+<footer class="flex w-full bg-greenProject/30 lg:bg-transparent lg:bg-gradient-to-t from-greenProject/30 from-0%  via-greenProject/30 via-80%  to-transparent to-80%">
+    <section class="w-full lg:w-2/3 flex flex-col lg:flex-row items-center px-8 pt-8 lg:pt-32 pb-8 lg:pb-2 justify-center gap-8 2xl:gap-20">
         <article class="flex flex-col justify-center gap-4">
             {socialMedia.map(({title, url, icon}) => (
-                <a href={url} rel="noreferrer" target="_blank"
-                   class=`flex ${icon !== 'instagram' ? 'gap-2' : 'gap-1'} items-center`>
-                    <Icon title={title}
-                          name=`social/${icon}`
-                          size={icon === 'instagram' ? 36 : 28}
-                          class=`${icon !== 'instagram' && 'ml-1'} text-greenProjectAccent` />
-                    <span>
+                    <a href={url} rel="noreferrer" target="_blank"
+                       class=`flex ${icon !== 'instagram' ? 'gap-2' : 'gap-1'} items-center`>
+                        <Icon title={title}
+                              name=`social/${icon}`
+                              size={icon === 'instagram' ? 36 : 28}
+                              class=`${icon !== 'instagram' && 'ml-1'} text-greenProjectAccent`/>
+                        <span>
                         {`@${title}`}
                     </span>
-                </a>))
+                    </a>))
             }
         </article>
         <form>
@@ -24,18 +25,27 @@ import { socialMedia } from "@data/social-media";
             <section class="mt-12 flex flex-col gap-8 justify-end">
                 <label class="flex flex-col gap-4" for="name">
                     <span class="text-xl pl-3">Nombre</span>
-                    <input id="name" name="name" class="px-4 h-11 bg-transparent border-2 border-greenProjectAccent rounded-full" type="text" required>
+                    <input id="name" name="name"
+                           class="px-4 h-11 bg-transparent border-2 border-greenProjectAccent rounded-full" type="text"
+                           required>
                 </label>
                 <label class="flex flex-col gap-4" for="mail">
                     <span class="text-xl pl-3">Email</span>
-                    <input id="mail" name="mail" class="px-4 h-11 bg-transparent border-2 border-greenProjectAccent rounded-full" type="text" required>
+                    <input id="mail" name="mail"
+                           class="px-4 h-11 bg-transparent border-2 border-greenProjectAccent rounded-full" type="text"
+                           required>
                 </label>
                 <div class="flex justify-end">
-                    <button type="submit" class=" mr-4 h-10 border-2 transition ease-linear duration-800 border-b-0 hover:border-b-2  hover:border-b-greenProjectAccent  border-t-0 border-x-0 w-fit px-4">
+                    <button type="submit" class="inline-block pb-1.5 px-2 relative after:content-[''] after:absolute
+                            after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-greenProjectAccent
+                            after:transition-[width] after:duration-300 after:ease-in-out hover:after:w-full">
                         <span class="text-xl">Enviar</span>
                     </button>
                 </div>
             </section>
         </form>
     </section>
+    <figure class="hidden lg:block w-1/3">
+        <img src={imgFooter.src} alt="img footer" loading="lazy" />
+    </figure>
 </footer>
