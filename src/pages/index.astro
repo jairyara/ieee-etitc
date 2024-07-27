@@ -2,11 +2,32 @@
 import CardEvents from '@components/CardEvents.astro';
 import Layout from '@layouts/Layout.astro'
 import CardCapitulos from '@components/card-describe/CardCapitulos.astro';
-import Nosotros from "@components/Nosotros.astro";
+import CardValues from "../components/CardValues.astro";
+import img from '@assets/img/img.webp';
+import {values} from "@data/values";
+import {chapters} from "@data/chapters";
 
-const title : string = 'Inicio';
-const description : string = 'IEEE ETITC Página oficial'
+const title: string = 'Inicio';
+const description: string = 'IEEE ETITC Página oficial'
 ---
+
+<style>
+    .svg-custom path {
+        stroke: #88C64B;
+        stroke-width: 3;
+        stroke-dasharray: 529.74; /* Longitud del trazo del path */
+        stroke-dashoffset: 529.74; /* Oculta el path inicialmente */
+        transition: stroke-dashoffset 2s ease; /* Animación en 3 segundos */
+    }
+
+    .svg-custom-black path {
+        stroke: #111;
+    }
+
+    .draw path {
+        stroke-dashoffset: 0; /* Dibuja el path cuando se agrega la clase draw */
+    }
+</style>
 
 <Layout title={title} description={description}>
 
@@ -20,23 +41,186 @@ const description : string = 'IEEE ETITC Página oficial'
                 <p class="text-white text-2xl">
                     Escuela Tecnológica Instituto Técnico Central
                 </p>
-                <button class="text-white">
-                    Conocer más
+                <button onclick="window.location.href='/inscripciones/'"
+                        class="text-white relative flex items-center justify-center">
+                    <span class="px-5 py-4 text-lg">Conocer más</span>
+                    <svg class="absolute w-full top-0 left-0 svg-custom"
+                         viewBox="0 0 198 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                                d="M23.09 38.4965C1.16781 20.1861 53.6035 -5.15285 142.182 5.3683C230.389
+                                15.8462 206.3 78.2296 87.0053 71.6852C-8.46947 66.4463 -32.7247 16.1402 62.6204 13.6331"
+                                stroke="#AFE767"
+                                stroke-width="3.98653"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                                stroke-dasharray="529.74 13.83"/>
+                    </svg>
                 </button>
             </section>
         </div>
     </main>
-    <section class="py-16">
-        <div class="container mx-auto">
-            <section>
-
+    <section class="py-32">
+        <div class="container mx-auto flex items-center justify-between">
+            <section class="w-1/2">
+                <h4 class="font-title text-sm">
+                    IEEE ETITC
+                </h4>
+                <h2 class="font-title text-5xl py-4">
+                    Estamos para <span class="uppercase text-greenProjectAccent ml-1">ti</span>
+                </h2>
+                <p class="text-gray-500">
+                    Toma el siguiente paso y vive una experiencia más allá de la académica, en la cual podrás aplicar
+                    las habilidades que aprendas dentro y fuera del aula para que puedas liderar e impactar el mundo que
+                    te rodea. Aprovecha de todos los beneficios que IEEE tiene para ti y haz nuevos amigos que aportarán
+                    a tu futuro profesional.
+                </p>
+                <section class="flex flex-wrap gap-4 max-w-[65ch] mt-8">
+                    <p class="text-4xl">
+                        Creemos en un aporte solido a la
+                    </p>
+                    <p class="text-4xl relative w-48 flex justify-center items-center h-12 ">
+                        sociedad
+                        <svg
+                                class="absolute w-full -top-3 left-0 svg-custom"
+                                viewBox="0 0 214 73" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                    d="M176.288 2.52082C176.288 2.52082 29.1133 -6.49467 4.15183 33.7163C-21.2992 74.716
+                                125.557 77.2139 177.109 65.3574C261.399 45.9716 175.694 6.8229 112.28 12.3394"
+                                    stroke="#AFE767"
+                                    stroke-width="1.93793"
+                                    stroke-linecap="round"
+                                    stroke-dasharray="0.24 0.24"/>
+                        </svg>
+                    </p>
+                    <div class="w-24 h-1 bg-black mt-8"></div>
+                    <p class="text-4xl">
+                        por medio de la tecnología, la innovación y la investigación.
+                    </p>
+                </section>
             </section>
-            <section>
-
+            <figure>
+                <img src={img.src} alt="img">
+            </figure>
+        </div>
+    </section>
+    <section class="w-full py-24 bg-gray-950">
+        <div class="container mx-auto flex justify-between items-center">
+            <section class="w-1/2">
+                <h2 class="text-white text-center mb-8 text-5xl font-title w-1/2 mx-auto">
+                    ¿Qué es la IEEE para nosotros?
+                </h2>
+                <div class="relative ">
+                    <h4 class="text-2xl text-white text-center font-title">
+                        Representa
+                    </h4>
+                    <svg
+                            class="absolute w-20 top-4 left-[45%] svg-custom"
+                            viewBox="0 0 116 95" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                        <path d="M90.59 80.4023L113.964 51.4965C113.964 51.4965 92.2841 45.3996 78.1278 44.9202"
+                              stroke="#AFE767" stroke-width="2.56425" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-dasharray="71.82 1.98"/>
+                        <path d="M8.77191 28.49C21.382 71.8623 59.1952 77.0011 113.042 51.5643" stroke="#AFE767"
+                              stroke-width="2.56425" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-dasharray="122.36 3.28"/>
+                    </svg>
+                </div>
+            </section>
+            <section class="w-1/2">
+                {
+                    values.map(({title, description}, index) => (
+                            <CardValues index={index + 1} title={title} description={description}/>
+                    ))
+                }
             </section>
         </div>
     </section>
 
-</Layout>
+    <section class="py-32">
+        <div class="container mx-auto relative">
+            <h2 class="text-5xl font-title text-center">
+                Capítulos
+            </h2>
+            <svg class="absolute w-40 top-[15%] left-[85%] svg-custom svg-custom-black"
+                 viewBox="0 0 193 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33.9335 42.0815C25.1826 65.5501 8.29291 74.6192 8.29291 74.6192C8.29291 74.6192 21.1921 76.0061 41.9592 89.5546"
+                      stroke="#1D1D1F" stroke-width="3.95657" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-dasharray="77.25 2.11"/>
+                <path d="M186.015 23.394C144.198 37.4664 94.8966 40.1106 9.72229 74.5925" stroke="#1D1D1F"
+                      stroke-width="3.95657" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-dasharray="179.17 4.75"/>
+            </svg>
+            <svg class="absolute w-32 top-[80%] left-[5%] svg-custom svg-custom-black" viewBox="0 0 116 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M83.4919 33.7505C86.4929 60.3381 101.654 74.1063 101.654 74.1063C101.654 74.1063 87.9251 72.2076 62.896 80.879" stroke="#1D1D1F" stroke-width="4.22665" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="82.52 2.24"/>
+                <path d="M12.4868 23.6987C37.4251 47.7731 68.5211 62.9571 100.186 73.7107" stroke="#1D1D1F" stroke-width="4.22665" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="99.22 2.67"/>
+            </svg>
 
+            <div class="grid grid-cols-2 mt-8">
+                {
+                    chapters.map(({name, smallDescription, largeDescription, color}, index) => (
+                            <CardCapitulos number={index} name={name}
+                                           shortDescription={smallDescription}
+                                           largeDescription={largeDescription}
+                                           color={color}
+                            />
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-950">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-title text-center text-white">
+                Eventos
+            </h2>
+            <div class="flex justify-around gap-4 mt-8">
+                <CardEvents/>
+            </div>
+            <div class="relative flex justify-center">
+                <button onclick="window.location.href='/noticias/'"
+                        class="text-white relative flex items-center justify-center">
+                    <span class="px-5 py-4 text-lg">Conocer más</span>
+                    <svg class="absolute w-full top-0 left-0 svg-custom"
+                         viewBox="0 0 198 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                                d="M23.09 38.4965C1.16781 20.1861 53.6035 -5.15285 142.182 5.3683C230.389
+                                15.8462 206.3 78.2296 87.0053 71.6852C-8.46947 66.4463 -32.7247 16.1402 62.6204 13.6331"
+                                stroke="#AFE767"
+                                stroke-width="3.98653"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                                stroke-dasharray="529.74 13.83"/>
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+</Layout>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const svgs = document.querySelectorAll('.svg-custom');
+
+        // Crear un Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Añadir la clase draw al SVG cuando está en la vista
+                    entry.target.classList.add('draw');
+                    // Dejar de observar después de la primera animación
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3 // El umbral de visibilidad del 30%
+        });
+
+        // Observar el SVG
+        svgs.forEach(svg => observer.observe(svg));
+    });
+
+</script>
 

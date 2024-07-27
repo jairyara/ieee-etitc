@@ -1,0 +1,71 @@
+---
+import {Icon} from 'astro-icon/components'
+
+interface componentProps {
+    index: number;
+    title: string;
+    description: string;
+    color: string;
+}
+
+let {index, title, description, color}: componentProps = Astro.props;
+---
+
+<article class="component-container">
+    <article class="w-full border-b-2 border-b-greenProjectDark/30 p-5 text-white card-values duration-500 ease-in-out">
+        <div class="mb-10 pt-3 pr-3 flex justify-between items-center pl-1.5">
+            <div>
+                <span class=`text-3xl pr-8 font-bold ${color}`>{`0${index} `}</span>
+                <span class="text-2xl font-title">{title}</span>
+            </div>
+            <button class="bg-greenProjectAccent text-shark p-2 aspect-square rounded-full btn-show">
+                <Icon name=`ui/plus` size={24} class="card-icon ease-in-out duration-500"/>
+            </button>
+        </div>
+        <div class="text-justify px-6 hidden description">
+            <p class="pr-5">
+                {`· ${description}`}
+            </p>
+        </div>
+    </article>
+</article>
+
+<script>
+    const container = document.querySelectorAll('.component-container');
+    container.forEach((element, index) => {
+
+        const cardValues = element.querySelector('.card-values');
+        const hidden = element.querySelector('.description');
+        const btnShow = element.querySelector('.btn-show');
+        const icon = element.querySelector('.btn-show .card-icon');
+
+        // Mostrar el primer contenido por defecto
+        if (index === 0) {
+            hidden.classList.remove('hidden');
+            cardValues.classList.add('bg-greenProjectDark/70');
+            cardValues.classList.add('rounded-3xl');
+            btnShow.classList.add('bg-white');
+            icon.classList.add('rotate-45');
+        }
+
+        btnShow.addEventListener('click', () => {
+            container.forEach(c => {
+                if (c !== container) {
+                    c.querySelector('.description').classList.add('hidden');
+                    c.querySelector('.card-values').classList.remove('bg-greenProjectDark/70', 'rounded-3xl');
+                    c.querySelector('.btn-show').classList.remove('bg-white');
+                    c.querySelector('.card-icon').classList.remove('rotate-45');
+                }
+            });
+
+            hidden.classList.toggle('hidden');
+            cardValues.classList.toggle('bg-greenProjectDark/70');
+            cardValues.classList.toggle('rounded-3xl');
+            btnShow.classList.toggle('bg-white');
+            icon.classList.toggle('rotate-45');
+        });
+    });
+
+
+</script>
+

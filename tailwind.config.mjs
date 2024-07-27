@@ -11,6 +11,7 @@ export default {
 				'blueProject': '#00629B',
 				'greenProject': '#AFE767',
 				'greenProjectAccent': '#88C64B',
+				'greenProjectDark': '#506833',
 				'blueCard' : '#65b0c1',
 				'shark': '#1D1D1F',
 				'greenShow': '#ECFFD4'
