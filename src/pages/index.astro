@@ -3,13 +3,14 @@ import CardEvents from '@components/CardEvents.astro';
 import Layout from '@layouts/Layout.astro'
 import CardCapitulos from '@components/card-describe/CardCapitulos.astro';
 import CardValues from "../components/CardValues.astro";
-import img from '@assets/img/img.webp';
+import imgSection from '@assets/img/img.webp';
 import {values} from "@data/values";
 import {chapters} from "@data/chapters";
 import {events} from "@data/events";
-
 const title: string = 'Inicio';
 const description: string = 'IEEE ETITC Página oficial'
+import CardMember from "@components/CardMember.astro";
+
 ---
 
 <style>
@@ -101,7 +102,7 @@ const description: string = 'IEEE ETITC Página oficial'
                 </section>
             </section>
             <figure>
-                <img src={img.src} alt="img">
+                <img src={imgSection.src} alt="img">
             </figure>
         </div>
     </section>
@@ -134,7 +135,6 @@ const description: string = 'IEEE ETITC Página oficial'
                             <CardValues index={index + 1} title={title} description={description}/>
                     ))
                 }
-            </section>
         </div>
     </section>
 
@@ -152,9 +152,14 @@ const description: string = 'IEEE ETITC Página oficial'
                       stroke-width="3.95657" stroke-linecap="round" stroke-linejoin="round"
                       stroke-dasharray="179.17 4.75"/>
             </svg>
-            <svg class="absolute w-32 top-[80%] left-[5%] svg-custom svg-custom-black" viewBox="0 0 116 97" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M83.4919 33.7505C86.4929 60.3381 101.654 74.1063 101.654 74.1063C101.654 74.1063 87.9251 72.2076 62.896 80.879" stroke="#1D1D1F" stroke-width="4.22665" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="82.52 2.24"/>
-                <path d="M12.4868 23.6987C37.4251 47.7731 68.5211 62.9571 100.186 73.7107" stroke="#1D1D1F" stroke-width="4.22665" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="99.22 2.67"/>
+            <svg class="absolute w-32 top-[80%] left-[5%] svg-custom svg-custom-black" viewBox="0 0 116 97" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M83.4919 33.7505C86.4929 60.3381 101.654 74.1063 101.654 74.1063C101.654 74.1063 87.9251 72.2076 62.896 80.879"
+                      stroke="#1D1D1F" stroke-width="4.22665" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-dasharray="82.52 2.24"/>
+                <path d="M12.4868 23.6987C37.4251 47.7731 68.5211 62.9571 100.186 73.7107" stroke="#1D1D1F"
+                      stroke-width="4.22665" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-dasharray="99.22 2.67"/>
             </svg>
             <div class="grid grid-cols-2 mt-8">
                 {
