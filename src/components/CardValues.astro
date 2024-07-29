@@ -41,7 +41,7 @@ let {index, title, description, color}: componentProps = Astro.props;
 
         // Mostrar el primer contenido por defecto
         if (index === 0) {
-            hidden.classList.remove('hidden');
+            hidden!.classList.remove('hidden');
             cardValues!.classList.add('bg-greenProjectDark/70');
             cardValues!.classList.add('rounded-3xl');
             btnShow!.classList.add('bg-white');
