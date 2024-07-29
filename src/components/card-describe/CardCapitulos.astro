@@ -51,14 +51,12 @@ const { number, name, shortDescription, largeDescription, color } : CardCapitulo
 
 
 <script>
-    function getInitials(phrase) {
+    function getInitials(phrase:string):string {
         // Dividir la frase en palabras
         const words = phrase.split(' ');
 
         // Obtener la primera letra de cada palabra y unirlas
-        const initials = words.map(word => word.charAt(0)).join('');
-
-        return initials;
+        return words.map(word => word.charAt(0)).join('');
     }
 
     // Seleccionar todos los elementos con clase .chapter
@@ -70,10 +68,10 @@ const { number, name, shortDescription, largeDescription, color } : CardCapitulo
         const abbrChapter = chapter.querySelector('.abbr-chapter');
 
         // Obtener las iniciales del texto del .chapter-name
-        const initials = getInitials(chapterName.textContent);
+        const initials = getInitials(chapterName!.textContent);
 
         // Asignar las iniciales al .abbr-chapter correspondiente
-        abbrChapter.textContent = `capítulo ${initials}`;
+        abbrChapter!.textContent = `capítulo ${initials}`;
 
         if (index % 2 === 0) {
             chapter.classList.add('justify-self-start');
@@ -85,10 +83,10 @@ const { number, name, shortDescription, largeDescription, color } : CardCapitulo
             chapter.classList.add('shadow-sky-300/90');
             chapter.classList.add('bg-blueCard');
             chapter.classList.add('text-white');
-            chapter.querySelector('.color-number').classList.add('!text-white');
-            chapter.querySelector('.btn-details .container-icon').classList.add('!bg-white');
-            chapter.querySelector('.container-icon .icon').classList.add('rotate-45');
-            chapter.querySelector('.content-hidden').classList.remove('hidden');
+            chapter.querySelector('.color-number')!.classList.add('!text-white');
+            chapter.querySelector('.btn-details .container-icon')!.classList.add('!bg-white');
+            chapter.querySelector('.container-icon .icon')!.classList.add('rotate-45');
+            chapter.querySelector('.content-hidden')!.classList.remove('hidden');
         }
 
         chapter.querySelectorAll('.btn-details').forEach(btn => {
@@ -96,14 +94,14 @@ const { number, name, shortDescription, largeDescription, color } : CardCapitulo
 
                 chapters.forEach(c => {
                     if (c !== chapter) {
-                        c.querySelector('.content-hidden').classList.add('hidden');
+                        c.querySelector('.content-hidden')!.classList.add('hidden');
                         c.classList.remove('shadow-black/50');
                         c.classList.remove('shadow-sky-300/90');
                         c.classList.remove('bg-blueCard');
                         c.classList.remove('text-white');
-                        c.querySelector('.color-number').classList.remove('!text-white');
-                        c.querySelector('.btn-details .container-icon').classList.remove('!bg-white');
-                        c.querySelector('.container-icon .icon').classList.remove('rotate-45');
+                        c.querySelector('.color-number')!.classList.remove('!text-white');
+                        c.querySelector('.btn-details .container-icon')!.classList.remove('!bg-white');
+                        c.querySelector('.container-icon .icon')!.classList.remove('rotate-45');
                     }
                 });
 
