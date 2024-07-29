@@ -42,27 +42,27 @@ let {index, title, description, color}: componentProps = Astro.props;
         // Mostrar el primer contenido por defecto
         if (index === 0) {
             hidden.classList.remove('hidden');
-            cardValues.classList.add('bg-greenProjectDark/70');
-            cardValues.classList.add('rounded-3xl');
-            btnShow.classList.add('bg-white');
-            icon.classList.add('rotate-45');
+            cardValues!.classList.add('bg-greenProjectDark/70');
+            cardValues!.classList.add('rounded-3xl');
+            btnShow!.classList.add('bg-white');
+            icon!.classList.add('rotate-45');
         }
 
-        btnShow.addEventListener('click', () => {
+        btnShow!.addEventListener('click', () => {
             container.forEach(c => {
                 if (c !== container) {
-                    c.querySelector('.description').classList.add('hidden');
-                    c.querySelector('.card-values').classList.remove('bg-greenProjectDark/70', 'rounded-3xl');
-                    c.querySelector('.btn-show').classList.remove('bg-white');
-                    c.querySelector('.card-icon').classList.remove('rotate-45');
+                    c.querySelector('.description')!.classList.add('hidden');
+                    c.querySelector('.card-values')!.classList.remove('bg-greenProjectDark/70', 'rounded-3xl');
+                    c.querySelector('.btn-show')!.classList.remove('bg-white');
+                    c.querySelector('.card-icon')!.classList.remove('rotate-45');
                 }
             });
 
-            hidden.classList.toggle('hidden');
-            cardValues.classList.toggle('bg-greenProjectDark/70');
-            cardValues.classList.toggle('rounded-3xl');
-            btnShow.classList.toggle('bg-white');
-            icon.classList.toggle('rotate-45');
+            hidden!.classList.toggle('hidden');
+            cardValues!.classList.toggle('bg-greenProjectDark/70');
+            cardValues!.classList.toggle('rounded-3xl');
+            btnShow!.classList.toggle('bg-white');
+            icon!.classList.toggle('rotate-45');
         });
     });
 
