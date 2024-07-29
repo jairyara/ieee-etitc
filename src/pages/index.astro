@@ -6,6 +6,7 @@ import CardValues from "../components/CardValues.astro";
 import img from '@assets/img/img.webp';
 import {values} from "@data/values";
 import {chapters} from "@data/chapters";
+import {events} from "@data/events";
 
 const title: string = 'Inicio';
 const description: string = 'IEEE ETITC Página oficial'
@@ -31,7 +32,7 @@ const description: string = 'IEEE ETITC Página oficial'
 
 <Layout title={title} description={description}>
 
-    <main class="w-full h-hero bg-[url('/assets/img/hero.webp')] bg-cover bg-center">
+    <main class="w-full h-screen -mt-24 bg-[url('/assets/img/hero.webp')] bg-cover bg-center">
         <div class="bg-radial-center w-full h-full">
             <section class="container flex  h-full flex-col justify-end
             items-start mx-auto py-20 gap-4">
@@ -155,7 +156,6 @@ const description: string = 'IEEE ETITC Página oficial'
                 <path d="M83.4919 33.7505C86.4929 60.3381 101.654 74.1063 101.654 74.1063C101.654 74.1063 87.9251 72.2076 62.896 80.879" stroke="#1D1D1F" stroke-width="4.22665" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="82.52 2.24"/>
                 <path d="M12.4868 23.6987C37.4251 47.7731 68.5211 62.9571 100.186 73.7107" stroke="#1D1D1F" stroke-width="4.22665" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="99.22 2.67"/>
             </svg>
-
             <div class="grid grid-cols-2 mt-8">
                 {
                     chapters.map(({name, smallDescription, largeDescription, color}, index) => (
@@ -175,8 +175,12 @@ const description: string = 'IEEE ETITC Página oficial'
             <h2 class="text-5xl font-title text-center text-white">
                 Eventos
             </h2>
-            <div class="flex justify-around gap-4 mt-8">
-                <CardEvents/>
+            <div class="grid grid-cols-3 justify-items-center gap-4 my-12">
+                {
+                    events.slice().reverse().slice(0, 3).map(({img, name, description, link}, index) => (
+                            <CardEvents img={img} eventTitle={name} description={description} url={link}/>
+                    ))
+                }
             </div>
             <div class="relative flex justify-center">
                 <button onclick="window.location.href='/noticias/'"
