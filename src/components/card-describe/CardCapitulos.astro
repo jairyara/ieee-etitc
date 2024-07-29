@@ -1,7 +1,7 @@
 ---
 import {Icon} from 'astro-icon/components';
 
-interface CardCapitulosProps {
+interface Props {
     number: number;
     name: string;
     shortDescription: string;
@@ -9,7 +9,7 @@ interface CardCapitulosProps {
     color: string;
 }
 
-const { number, name, shortDescription, largeDescription, color } : CardCapitulosProps = Astro.props;
+const { number, name, shortDescription, largeDescription, color } = Astro.props;
 ---
 
 <article class="w-4/5 my-4 col-span-2
@@ -68,7 +68,7 @@ const { number, name, shortDescription, largeDescription, color } : CardCapitulo
         const abbrChapter = chapter.querySelector('.abbr-chapter');
 
         // Obtener las iniciales del texto del .chapter-name
-        const initials = getInitials(chapterName!.textContent);
+        const initials = getInitials(chapterName?.textContent || "");
 
         // Asignar las iniciales al .abbr-chapter correspondiente
         abbrChapter!.textContent = `capítulo ${initials}`;
@@ -105,7 +105,7 @@ const { number, name, shortDescription, largeDescription, color } : CardCapitulo
                     }
                 });
 
-                chapter.querySelector('.content-hidden').classList.toggle('hidden');
+                chapter.querySelector('.content-hidden')!.classList.toggle('hidden');
                 chapter.classList.toggle('shadow-black/50');
                 chapter.classList.toggle('shadow-sky-300/90');
                 chapter.classList.toggle('bg-blueCard');

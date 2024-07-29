@@ -1,14 +1,14 @@
 ---
 import {Icon} from 'astro-icon/components'
 
-interface componentProps {
+interface Props {
     index: number;
     title: string;
     description: string;
     color: string;
 }
 
-let {index, title, description, color}: componentProps = Astro.props;
+let {index, title, description, color} = Astro.props;
 ---
 
 <article class="component-container">
@@ -33,7 +33,6 @@ let {index, title, description, color}: componentProps = Astro.props;
 <script>
     const container = document.querySelectorAll('.component-container');
     container.forEach((element, index) => {
-
         const cardValues = element.querySelector('.card-values');
         const hidden = element.querySelector('.description');
         const btnShow = element.querySelector('.btn-show');
@@ -51,10 +50,10 @@ let {index, title, description, color}: componentProps = Astro.props;
         btnShow!.addEventListener('click', () => {
             container.forEach(c => {
                 if (c !== container) {
-                    c.querySelector('.description')!.classList.add('hidden');
-                    c.querySelector('.card-values')!.classList.remove('bg-greenProjectDark/70', 'rounded-3xl');
-                    c.querySelector('.btn-show')!.classList.remove('bg-white');
-                    c.querySelector('.card-icon')!.classList.remove('rotate-45');
+                    c.querySelector('.description')?.classList.add('hidden');
+                    c.querySelector('.card-values')?.classList.remove('bg-greenProjectDark/70', 'rounded-3xl');
+                    c.querySelector('.btn-show')?.classList.remove('bg-white');
+                    c.querySelector('.card-icon')?.classList.remove('rotate-45');
                 }
             });
 
