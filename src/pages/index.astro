@@ -1,15 +1,42 @@
 ---
+import CardEvents from '@components/CardEvents.astro';
 import Layout from '@layouts/Layout.astro'
 import CardCapitulos from '@components/card-describe/CardCapitulos.astro';
 import Nosotros from "@components/Nosotros.astro";
-
+import CardMember from "@components/CardMember.astro";
 const title : string = 'Inicio';
 const description : string = 'IEEE ETITC Página oficial'
 ---
 
 <Layout title={title} description={description}>
-    <CardCapitulos />
-    <Nosotros />
+
+    <main class="w-full h-hero bg-[url('/assets/img/hero.webp')] bg-cover bg-center">
+        <div class="bg-radial-center w-full h-full">
+            <section class="container flex  h-full flex-col justify-end
+            items-start mx-auto py-20 gap-4">
+                <h1 class="text-white font-title text-6xl font-bold">
+                    Rama Estudiantil IEEE
+                </h1>
+                <p class="text-white text-2xl">
+                    Escuela Tecnológica Instituto Técnico Central
+                </p>
+                <button class="text-white">
+                    Conocer más
+                </button>
+            </section>
+        </div>
+    </main>
+    <section class="py-16">
+        <div class="container mx-auto">
+            <section>
+
+            </section>
+            <section>
+                <CardMember />
+            </section>
+        </div>
+    </section>
+
 </Layout>
 
 
