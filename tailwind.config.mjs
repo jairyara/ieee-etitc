@@ -15,6 +15,9 @@ export default {
 				'shark': '#1D1D1F',
 				'greenShow': '#ECFFD4'
 			},
+			margin: {
+				
+			}
 		},
 	},
 	plugins: [],
