@@ -1,0 +1,19 @@
+---
+export interface Props {
+    butonFilter: Array<Type>,
+}
+
+interface Type {
+    text: string,
+}
+
+const {butonFilter}: Props = Astro.props;
+
+---
+
+<section class="h-20 content-center text-center border-y-2 border-gray-100	my-24">
+    <button class="h-8 w-fit text-center border border-gray-200 rounded-md p-0. px-4 text-xs font-bold font-sans bg-greenProject/60 mr-3">All</button>
+    {butonFilter.map(({text}) => (
+        <button class="h-8 w-fit text-center border border-gray-200 rounded-md p-0.5 px-4  text-xs font-bold font-sans mr-3">{text}</button>
+    ))}
+</section>
