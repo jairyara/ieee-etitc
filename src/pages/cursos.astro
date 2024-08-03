@@ -1,8 +1,51 @@
 ---
+import NewCoursesCard from "@components/NewCoursesCard.astro";
 import Layout from "../layouts/Layout.astro";
+import CourseCard from "@components/CourseCard.astro";
+import {newCourseCard, courseCard} from "@utils/CourseCard";
+import FilterHrz from "@components/FilterHrz.astro";
+import {filterHrz} from "@utils/filter";
+
 const title : string = 'Inicio';
-const description : string = 'IEEE ETITC Página oficial'
+const description : string = 'IEEE ETITC Página oficial';
+
 ---
-<Layout title={title} description={description}>
-    Cursos
+<Layout title={title} description={description} >
+    <section class="my-8 block py-28">
+        <h1 class="text-center font-title text-5xl mb-32 tracking-wide	">Cursos</h1>
+        <section class="h-[459px] grid grid-cols-3 grid-rows-4 gap-x-8 gap-y-5 px-72 mb-56">
+            {newCourseCard.map((item, index) => (
+                <div class={
+                    index === 0 ? "row-span-4 col-span-2" : 
+                    index === 1 ? "col-span-1 row-span-2" : 
+                    "row-span-2 col-span-1"
+                    }
+                >
+                    <NewCoursesCard
+                        img={item.img}
+                        description={item.description}
+                    />
+                </div>
+            )
+            )}
+        </section>
+
+        <FilterHrz butonFilter={filterHrz} />
+
+        <section class="h-[53rem] grid grid-cols-4 gap-x-14 gap-y-12 px-72 mb-8 mt-40">
+            {courseCard.map((item, index) => (
+                <div class={
+                    index % 2 == 0 
+                    ? 'flex items-end'
+                    : 'initial'
+                }>
+                    <CourseCard
+                        img={item.img}
+                        title={item.title}
+                        text={item.text}
+                    />
+                </div>
+            ))}
+        </section>
+    </section>
 </Layout>

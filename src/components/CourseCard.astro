@@ -1,0 +1,18 @@
+---
+export interface Props {
+    img: string,
+    title: string,
+    text: string,
+}
+
+const {img, title, text}: Props = Astro.props;
+---
+<section class="seccion1 max-w-72 rounded-3xl shadow-lg relative" style=" --figure-width: 100%; --figure-height: 278px;">
+    <figure class="overflow-hidden rounded-t-xl relative" style="width: var(--figure-width); height: var(--figure-height)">
+        <img class="w-full h-full object-cover" src={img} alt="imagen" />
+    </figure>
+    <section class="h-24 py-3 px-8 text-center">
+        <p class="font-sans text-base leading-5 mb-3">{title}</p>
+        <p class="text-xs font-title text-slate-500	">{text}</p>
+    </section>
+</section> 
