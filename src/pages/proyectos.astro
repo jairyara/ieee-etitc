@@ -1,11 +1,31 @@
 ---
 
 import Layout from "@layouts/Layout.astro";
+import CardProject from "@components/CardProject.astro";
+import Img_slider from "@assets/img/img_project_1.png"
 const title : string = 'Inicio';
 const description : string = 'IEEE ETITC Página oficial'
 
 ---
 
 <Layout title={title} description={description}>
-    Proyectos
+    <section class="text-center">
+        <h2>Proyectos</h2>
+        <picture class=" h-4/5 w-auto bg-sky-600">
+            <img class="h-auto w-full" src={Img_slider.src} alt="avion en una pista de tierra">
+        </picture>
+    </section>    
+    <section class="text-center items-center justify-center my-4 gap-y-4 space-y-4 p-16">
+        <h3 class="text-6xl mb-10">
+            Con nuestros 
+            <span class="last-of-type:text-greenProject"> proyectos</span>
+        </h3>
+        <div class ="w-36 h-1 bg-sky-700 mx-auto"></div>
+        <h4 class="text-4xl mb-10">
+            Queremos impactar vidas
+        </h4>
+    </section>
+    <section>
+        <CardProject/>
+    </section>
 </Layout>

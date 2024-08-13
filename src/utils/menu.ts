@@ -15,7 +15,7 @@ export let menuItem: menu[] = [
     {
         name: 'Cursos',
         url: '/cursos/'
-},
+    },
     {
         name: 'Noticias',
         url: '/noticias/'

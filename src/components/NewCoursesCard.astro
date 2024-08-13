@@ -1,0 +1,16 @@
+---
+export interface Props {
+    img: string,
+    description: string,
+}
+
+const {img, description}: Props = Astro.props;
+---
+<section class="seccion1 max-w-full relative w-full h-full">
+    <figure class="overflow-hidden rounded-xl relative w-full h-full">
+        <img class="w-full h-full object-cover" src={img} alt="imagen" />
+    </figure>
+    <section class=" content-end content_text rounded-xl bg-black/[.15] p-10 text-white absolute top-0 left-0 w-full h-full" >
+        <p class="font-title text-2xl">{description}</p>
+    </section>
+</section> 
