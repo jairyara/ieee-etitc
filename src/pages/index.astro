@@ -191,7 +191,7 @@ import CardMember from "@components/CardMember.astro";
             </h2>
             <div class="grid grid-cols-3 justify-items-center gap-4 my-12">
                 {
-                    events.slice().reverse().slice(0, 3).map(({img, name, description, link}, index) => (
+                    events.slice().reverse().slice(0, 3).map(({img, name, description, link}) => (
                             <CardEvents img={img} eventTitle={name} description={description} url={link}/>
                     ))
                 }
