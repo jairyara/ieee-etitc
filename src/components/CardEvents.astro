@@ -1,19 +1,29 @@
 ---
-import imgEvent from '@assets/img/pexels.jpg';
+interface Props {
+    img: string;
+    eventTitle: string;
+    description: string;
+    url: string;
+    user : user;
+}
+
+const {img, eventTitle, description, url} = Astro.props
 
 ---
-
-<section class=" w-full relative">
-    <figure class="relative overflow-hidden rounded-xl max-w-72 w-60 h-64">
-        <img class="absolute w-full object-cover"  src={imgEvent.src} alt="imagen"/>
-    </figure>
-    <section class="content_text rounded-xl bg-black/[.15] text-center px-6
-    py-6 absolute text-white flex justify-between flex-col w-60 h-64">
-        <p class="font-title text-lg">Develop a clear vision of
-            where your business is
-            heading</p>
-        <p class="text-xs">You’ll have a repeatable process in place
-            that gives you the confidence to make long-
-            term business decisions.</p>
-    </section>
-</section>
+<a href={url}>
+    <article class="w-full grid max-w-72">
+        <figure class="max-w-72 row-start-1 col-start-1">
+            <img class="w-full aspect-square object-cover rounded-2xl "
+                 src={img} alt={`Imagen promocional ${eventTitle}`} loading="lazy"/>
+        </figure>
+        <section class=" rounded-xl bg-black/[.4] text-center px-6 py-6
+        text-white flex justify-between flex-col row-start-1 col-start-1">
+            <p class="font-title text-lg">
+                {eventTitle}
+            </p>
+            <p class="text-xs">
+                {description}
+            </p>
+        </section>
+    </article>
+</a>

@@ -5,7 +5,8 @@ export default {
 		extend: {
 			fontFamily: {
 				'sans': ['Noto Sans', 'sans-serif'],
-				'title': ['Libre Baskerville', 'serif']
+				'title2': ['Libre Baskerville', 'serif'],
+				'title': ['math', 'serif']
 			},
 			colors: {
 				'blueProject': '#00629B',
@@ -14,7 +15,8 @@ export default {
 				'greenProjectDark': '#506833',
 				'blueCard' : '#65b0c1',
 				'shark': '#1D1D1F',
-				'greenShow': '#ECFFD4'
+				'greenShow': '#ECFFD4',
+				
 			},
 			height: {
 				'hero': 'calc(100vh - 96px)'
