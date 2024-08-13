@@ -4,12 +4,12 @@ import {menuItem} from "@utils/menu";
 import {Icon} from "astro-icon/components";
 ---
 
-<header class="bg-transparent h-24 shadow sticky top-0 left-0 z-10 header-component ease-in-out duration-300">
+<header class=`bg-white h-24 shadow sticky top-0 left-0 z-10 header-component ease-in-out duration-300`>
     <div class="relative lg:container mx-auto flex items-center justify-between h-full">
         <figure class="h-14 pl-4 lg:p-0">
             <a href="/" rel="noreferrer" class="flex w-full text-white h-full items-center gap-3">
                 <img class="h-full p-1 bg-white rounded-lg" src={LogoIEEEETITC.src} alt="IEEE Logo " title="IEEE Logo">
-                <span class="font-title text-lg lg:text-2xl font-bold uppercase" translate="no">ieee etitc</span>
+                <span class="font-title text-blueProject text-lg lg:text-2xl font-bold uppercase" translate="no">ieee etitc</span>
             </a>
         </figure>
         <nav id="menu-list" class=" absolute lg:static top-24 bg-white
@@ -18,8 +18,8 @@ import {Icon} from "astro-icon/components";
                 {
                     menuItem.map(item =>
                             <li>
-                                <a class=`text-white font-bold lg:text-lg font-title
-                                ${item.url === Astro.url.pathname && 'text-greenProjectAccent'}` href={item.url}>
+                                <a class=`font-bold lg:text-lg font-title
+                                ${(item.url === Astro.url.pathname) ? 'text-greenProjectAccent' : 'text-shark'}` href={item.url}>
                                     {item.name}
                                 </a>
                             </li>
@@ -36,31 +36,31 @@ import {Icon} from "astro-icon/components";
 <script>
     const menuList = document.getElementById('menu-list') as Element;
     const btnHeader = document.getElementById('btn-header') as Element;
-    const header = document.querySelector('.header-component') as Element;
-    const headerAnchor = header.querySelectorAll('a');
-    const threshold = header.clientHeight;
+    // const header = document.querySelector('.header-component') as Element;
+    // const headerAnchor = header.querySelectorAll('a');
+    // const threshold = header.clientHeight;
 
     btnHeader.addEventListener('click', () => {
         menuList.classList.toggle('hidden');
     });
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > threshold) {
-            header.classList.remove('bg-transparent');
-            header.classList.add('bg-white');
-            header.classList.add('shadow');
-            headerAnchor.forEach(anchor => {
-                anchor.classList.remove('text-white');
-                anchor.classList.add('text-black');
-            });
-        } else {
-            header.classList.remove('bg-white');
-            header.classList.remove('shadow');
-            headerAnchor.forEach(anchor => {
-                anchor.classList.add('text-white');
-                anchor.classList.remove('text-black');
-            });
-        }
-    })
+    // window.addEventListener('scroll', () => {
+    //     if (window.scrollY > threshold) {
+    //         header.classList.remove('bg-transparent');
+    //         header.classList.add('bg-white');
+    //         header.classList.add('shadow');
+    //         headerAnchor.forEach(anchor => {
+    //             anchor.classList.remove('text-white');
+    //             anchor.classList.add('text-black');
+    //         });
+    //     } else {
+    //         header.classList.remove('bg-white');
+    //         header.classList.remove('shadow');
+    //         headerAnchor.forEach(anchor => {
+    //             anchor.classList.add('text-white');
+    //             anchor.classList.remove('text-black');
+    //         });
+    //     }
+    // })
 
 </script>
